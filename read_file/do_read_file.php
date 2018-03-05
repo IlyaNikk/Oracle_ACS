@@ -1,5 +1,5 @@
 <?php
-include 'library.php';
+include '../library.php';
 
 function get_lines($file_name)
 {
