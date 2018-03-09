@@ -1,7 +1,7 @@
 <?php
-function connect_to_oracle($login = "HR", $password = "oracle")
+function connect_to_oracle($login = "INIKITIN", $password = "INIKITIN")
 {
-    $connection = oci_connect($login, $password, "127.0.0.1/orcl");
+    $connection = oci_connect($login, $password, "127.0.0.1/xe");
     if (!$connection)
     {
         $err = oci_error();
