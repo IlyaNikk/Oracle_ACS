@@ -38,7 +38,8 @@ while (oci_fetch($s)) {
         $count++;
     }
     if ($_COOKIE["persType"] == 'admin') {
-        echo("<a href='#' class='col border border-dark bg-light'>Редактировать</a>");
+        echo("<a href='updater.php?table_name=" . $table_name . "&id=" . oci_result($s, $columns_names[0]) . "'
+                class='col border border-dark bg-light'>Редактировать</a>");
         echo("<a href='delete.php?table_name=" . $table_name . "&id=" . oci_result($s, $columns_names[0]) . "'
                 class='col border border-dark bg-light'>Удалить</a>");
     }

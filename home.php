@@ -30,7 +30,7 @@
             <p class="font-weight-light"><a href="home.php?table_name=PERSONAL">Персонал</a></p>
             <p class="font-weight-light"><a href="home.php?table_name=UTILITY">Изделия</a></p>
             <br>
-            <p class="font-weight-light">Выход</p>
+            <a href="auth.html" class="font-weight-light">Выход</a>
         </div>
         <div class="col-8 border border-dark bg-warning">
             <div class="col-11 container">
