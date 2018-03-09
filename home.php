@@ -33,7 +33,7 @@
             <p class="font-weight-light">Выход</p>
         </div>
         <div class="col-8 border border-dark bg-warning">
-            <div class="container">
+            <div class="col-11 container">
                 <?php include 'selector.php';?>
             </div>
         </div>

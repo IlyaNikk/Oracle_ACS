@@ -19,7 +19,6 @@ function table_columns_names($connection, $table_name)
     while (oci_fetch($query))
         array_push($names, oci_result($query, "COLUMN_NAME"));
     // remove ID field
-    unset($names['0']);
 
     return $names;
 }
