@@ -79,4 +79,7 @@ ALTER TABLE inikitin.operation ADD ( CONSTRAINT oper_util_id_FK FOREIGN KEY (ope
 
 ALTER TABLE inikitin.operation ADD ( CONSTRAINT oper_board_id_FK FOREIGN KEY (oper_board_id) REFERENCES inikitin.board (board_id) VALIDATE );
 
-ALTER TABLE inikitin.personal ADD ( CONSTRAINT pers_login_UQ UNIQUE (pers_login) VALIDATE )
+ALTER TABLE inikitin.personal ADD ( CONSTRAINT pers_login_UQ UNIQUE (pers_login) VALIDATE );
+
+INSERT INTO personal(pers_id, pers_f, pers_i, pers_o, pers_job, pers_login, pers_pass, pers_type)
+      VALUES (1, admin, admin, admin, admin, admin, admin, admin);

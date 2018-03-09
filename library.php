@@ -2,10 +2,9 @@
 function connect_to_oracle($login = "INIKITIN", $password = "INIKITIN")
 {
     $connection = oci_connect($login, $password, "127.0.0.1/xe");
-    if (!$connection)
-    {
+    if (!$connection) {
         $err = oci_error();
-        echo ("Oracle Connect Error". $err["message"]);
+        echo("Oracle Connect Error" . $err["message"]);
     }
 
     return $connection;
@@ -31,6 +30,17 @@ function close_connection($connection)
     oci_close($connection);
 }
 
+function login($connection, $login, $password)
+{
+    $query = oci_parse($connection,
+        "SELECT PERS_TYPE FROM PERSONAL WHERE PERS_LOGIN = '$login' AND PERS_PASS = '$password'");
+    oci_execute($query, OCI_DEFAULT);
+
+    $names = array();
+    while (oci_fetch($query)) {
+        return oci_result($query, "PERS_TYPE");
+    }
+}
 
 function str_pad_unicode($str, $pad_len, $pad_str = ' ', $dir = STR_PAD_RIGHT)
 {
