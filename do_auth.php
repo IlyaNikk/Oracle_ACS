@@ -1,5 +1,5 @@
 <?php
-include '../library.php';
+include 'library.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login']) && isset($_POST['password']))
 {
@@ -14,6 +14,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login']) && isset($_PO
     }
     else {
         close_connection($c);
-        return (include '../home.php');
+        setcookie("persType", $res, time() + 10000);
+        $home = file_get_contents('home.php');
+        $selector = file_get_contents('selector.php');
+        echo str_replace( "<?php include \'selector.php\';?>",
+            $selector, $home);
+        return $home;
     }
 }

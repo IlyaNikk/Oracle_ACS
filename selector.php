@@ -28,22 +28,26 @@ while (oci_fetch($s))
     echo("<div class='row'>");
     foreach ($columns_names as $name)
         echo("<div class='col border border-dark bg-light'>" . oci_result($s, $name) . "</div>");
+    if ($_COOKIE["persType"] == 'admin') {
+        echo("<a href='#' class=>Редактировать</a>");
+        echo("<a href='#' class=>Удалить</a>");
+    }
     echo("</div>");
 }
 
-echo("<form action='inserter.php' method='get'>");
-echo("<div class='row'>");
-foreach ($columns_names as $name)
-{
-    echo("<div class='col border border-dark bg-light'>");
-    echo("<input type='text' class='form-control' placeholder='$name' name='$name'>");
+if ($_COOKIE["persType"] == 'admin') {
+    echo("<form action='inserter.php' method='get'>");
+    echo("<div class='row'>");
+    foreach ($columns_names as $name) {
+        echo("<div class='col border border-dark bg-light'>");
+        echo("<input type='text' class='form-control' placeholder='$name' name='$name'>");
+        echo("</div>");
+    }
+    echo("<input type='hidden' name='table_name' value='$table_name'>");
     echo("</div>");
+    echo("<button type='submit' class='btn btn-primary'>Добавить</button>");
+    echo("</form>");
+    echo("<p class='font-weight-light'><a href='read_file/read_file.html'>Считать из файла</a></p>");
 }
-echo("<input type='hidden' name='table_name' value='$table_name'>");
-echo("</div>");
-echo("<button type='submit' class='btn btn-primary'>Добавить</button>");
-echo("</form>");
-
-echo("<p class='font-weight-light'><a href='read_file/read_file.html'>Считать из файла</a></p>");
 
 close_connection($con);

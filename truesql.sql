@@ -83,3 +83,6 @@ ALTER TABLE inikitin.personal ADD ( CONSTRAINT pers_login_UQ UNIQUE (pers_login)
 
 INSERT INTO personal(pers_id, pers_f, pers_i, pers_o, pers_job, pers_login, pers_pass, pers_type)
       VALUES (1, admin, admin, admin, admin, admin, admin, admin);
+
+INSERT INTO personal(pers_id, pers_f, pers_i, pers_o, pers_job, pers_login, pers_pass, pers_type)
+      VALUES (2, guest, guest, guest, guest, guest, guest, guest);

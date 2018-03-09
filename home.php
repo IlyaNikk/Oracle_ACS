@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="col-11 container">
     <div class="row">
         <div class="col-4 border border-dark bg-warning">
             <h1 class="font-weight-light">ИУ4</h1>
@@ -23,11 +23,12 @@
     </div>
     <div class="row">
         <div class="col-4 border border-dark bg-warning">
-            <p class="font-weight-light"><a href="home.php?table_name=STAFF">Штат</a></p>
-            <p class="font-weight-light"><a href="home.php?table_name=VACANCY">Вакансии</a></p>
-            <p class="font-weight-light"><a href="home.php?table_name=EMPLOYEE">Сотрудники</a></p>
-            <p class="font-weight-light"><a href="home.php?table_name=HR_EMPLOYEE">HR-Сотрудники</a></p>
-            <p class="font-weight-light"><a href="home.php?table_name=DEPARTMENT">Отделы</a></p>
+            <p class="font-weight-light"><a href="home.php?table_name=ELEMENT">Элементы</a></p>
+            <p class="font-weight-light"><a href="home.php?table_name=BOARD">Платы</a></p>
+            <p class="font-weight-light"><a href="home.php?table_name=FACILITY">Оснастка</a></p>
+            <p class="font-weight-light"><a href="home.php?table_name=OPERATION">Операции</a></p>
+            <p class="font-weight-light"><a href="home.php?table_name=PERSONAL">Персонал</a></p>
+            <p class="font-weight-light"><a href="home.php?table_name=UTILITY">Изделия</a></p>
             <br>
             <p class="font-weight-light">Выход</p>
         </div>
