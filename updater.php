@@ -1,7 +1,9 @@
 <?php
 include 'library.php';
+echo('<link rel="stylesheet" type="text/css" href="main.css">');
+echo('<main>');
 
-$con = connect_to_oracle();
+$con = connectToOracle();
 if (!$con)
     die();
 
@@ -17,7 +19,7 @@ $columns_names = tableColumnsNames($con, $table_name);
 $count = 0;
 foreach ($columns_names as $name) {
     if ($count != 0) {
-        echo("<div class='col border border-dark bg-light'>$name</div>");
+        echo("<div class='col border border-dark bg-light'>" . dict($name) . "</div>");
     } else {
         echo("<div class='hidden'></div>");
     }
@@ -28,13 +30,13 @@ echo("<div class='col border border-dark bg-light'></div>");
 echo("</div>");
 echo("</div>");
 
-echo("<form action='update.php?table_name=" . $table_name . "&id=" . $id . "' method='post'>");
+echo("<form action='update.php?table_name=" . $table_name . "&id=" . $id . "&operation=update' method='post'>");
 echo("<div class='update-result__result'>");
 while (oci_fetch($s)) {
     $count = 0;
     foreach ($columns_names as $name) {
         if ($count != 0) {
-            echo("<input type='text' placeholder='$name' name='$name' value='" . oci_result($s, $name) . "'>");
+            echo("<input class='form-insert' type='text' placeholder='$name' name='$name' value='" . dict(oci_result($s, $name)) . "'>");
         }
         $count++;
     }
@@ -44,7 +46,8 @@ echo("<input type='hidden' name='table_name' value='$table_name'>");
 echo("<input type='hidden' name='id' value='$id'>");
 echo("<button type='submit' class='btn btn-primary'>Сохранить</button>");
 echo("</form>");
-
+echo("<a href='#'>Назад</a>");
+echo('</main>');
 echo("<script src='update.js'></script>");
 
 closeConnection($con);

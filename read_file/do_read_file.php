@@ -16,12 +16,12 @@ function get_lines($file_name)
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['table_name']) && isset($_POST['file']))
 {
-    $con = connect_to_oracle();
+    $con = connectToOracle();
     if (!$con)
         die();
 
     $table_name = $_POST['table_name'];
-    $columns_names = table_columns_names($con, $table_name);
+    $columns_names = tableColumnsNames($con, $table_name);
 
     foreach(get_lines($_POST['file']) as $line)
     {
@@ -30,5 +30,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['table_name']) && isset
         oci_execute(oci_parse($con, $insert_query), OCI_DEFAULT);
     }
 
-    close_connection($con);
+    closeConnection($con);
 }

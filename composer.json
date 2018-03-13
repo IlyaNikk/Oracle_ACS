@@ -1,5 +1,9 @@
 {
     "require": {
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "ext-gd": "*",
+        "ext-zip": "*",
         "phpoffice/phpspreadsheet": "^1.2",
         "setasign/fpdf": "1.8.1",
         "picqer/php-barcode-generator": "^0.2.2"

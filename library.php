@@ -97,7 +97,8 @@ function strPadUnicode($str, $pad_len, $pad_str = ' ', $dir = STR_PAD_RIGHT)
     return $result;
 }
 
-function dict($name) {
+function dict($name)
+{
     switch ($name) {
         case 'PERSONAL':
             return 'Сотрудники';
@@ -115,5 +116,31 @@ function dict($name) {
             return 'Пароль';
         case 'PERS_TYPE':
             return 'Тип пользователя';
+        case 'Andry':
+            return 'Андрей';
+        case 'Alex':
+            return 'Алексей';
+        case 'Demin':
+            return 'Демин';
+        case 'Vlasov':
+            return 'Власов';
+        case 'Igor':
+            return 'Игоревич';
+        case 'Anatol':
+            return 'Анатольевич';
+        case 'Direct':
+            return 'Директор';
+        case 'Ilya':
+            return 'Илья';
+        case 'Vladimir':
+            return 'Владимирович';
+        case 'Nikitin':
+            return 'Никитин';
+        case 'stager':
+            return 'Стажер';
+        case 'sotr':
+            return 'Сотрудник';
+        default:
+            return $name;
     }
 }

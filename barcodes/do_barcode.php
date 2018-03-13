@@ -15,16 +15,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['barcode']))
         return;
     }
 
-    $con = connect_to_oracle();
+    $con = connectToOracle();
     if (!$con)
         die();
 
     $table_name = 'employee';
-    $columns_names = table_columns_names($con, $table_name);
+    $columns_names = tableColumnsNames($con, $table_name);
 
     $insert_query =
         "INSERT INTO $table_name (" . implode(',', $columns_names) . ") VALUES (" . $barcodes[$_POST['barcode']]. ")";
     oci_execute(oci_parse($con, $insert_query), OCI_DEFAULT);
 
-    close_connection($con);
+    closeConnection($con);
 }

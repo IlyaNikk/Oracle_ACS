@@ -39,16 +39,16 @@ while (oci_fetch($s)) {
     $count = 0;
     foreach ($columnsNames as $name) {
         if ($count != 0) {
-            echo("<td class='select-result__cell'>" . oci_result($s, $name) . "</td>");
+            echo("<td class='select-result__cell'>" . dict(oci_result($s, $name)) . "</td>");
         } else {
-            echo("<td class='hidden'><input type='hidden' value='" . oci_result($s, $name) . "'></td>");
+            echo("<td class='hidden'><input type='hidden' value='" . dict(oci_result($s, $name)) . "'></td>");
         }
         $count++;
     }
     if ($_COOKIE["persType"] == 'admin') {
-        echo("<td><a href='updater.php?table_name=" . $table_name . "&id=" . oci_result($s, $columnsNames[0]) . "'
+        echo("<td><a href='updater.php?table_name=" . $tableName . "&id=" . oci_result($s, $columnsNames[0]) . "'
                 class='col'>Редактировать</a></td>");
-        echo("<td><a href='delete.php?table_name=" . $table_name . "&id=" . oci_result($s, $columnsNames[0]) . "'
+        echo("<td><a href='update.php?table_name=" . $tableName . "&id=" . oci_result($s, $columnsNames[0]) . "&operation=delete'
                 class='col'>Удалить</a></td>");
     }
     echo("</tr>");
@@ -57,7 +57,7 @@ while (oci_fetch($s)) {
 echo("</table>");
 
 if ($_COOKIE["persType"] == 'admin') {
-    echo("<form action='inserter.php' method='get'>");
+    echo("<form action='update.php?operation=insert' method='post'>");
     echo("<div class='form__select-result'>");
     echo("<div class='hidden'><input type='hidden'>" . oci_result($s, $name) . "</input></div>");
     $count = 0;
