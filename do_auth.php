@@ -3,7 +3,7 @@ include 'library.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login']) && isset($_POST['password']))
 {
-    $c = connect_to_oracle();
+    $c = connectToOracle();
     $res = login($c, $_POST['login'], $_POST['password']);
     if (!$res)
     {
@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login']) && isset($_PO
         return $pageContents;
     }
     else {
-        close_connection($c);
+        closeConnection($c);
         setcookie("persType", $res, time() + 10000);
         $home = file_get_contents('home.php');
         $selector = file_get_contents('selector.php');
