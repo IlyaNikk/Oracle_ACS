@@ -14,7 +14,7 @@ $table_name = $_GET['table_name'];
 $id = $_GET['id'];
 $operation = $_GET['operation'];
 
-$columns_names = tableColumnsNames($con, $table_name);
+$columns_names = getReadableColName($con, $table_name);
 
 switch ($operation) {
     case 'update':
@@ -41,9 +41,19 @@ switch ($operation) {
 
         break;
     case 'insert':
-
+        array_pop($params);
+        array_shift($columns_names);
         $insert_query =
-            "INSERT INTO $table_name (" . implode(',', $columns_names) . ") VALUES (" . implode(',', $params) . ")";
+            "INSERT INTO $table_name (" . implode(',', $columns_names) . ") VALUES (";
+        $count = 0;
+        foreach ($params as $param) {
+            $insert_query .= "'" . $param . "'";
+            if ($count < count($params) - 1) {
+                $insert_query .= ",";
+            }
+            ++$count;
+        }
+        $insert_query .= ")";
         $s = oci_parse($con, $insert_query);
         break;
 }

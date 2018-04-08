@@ -100,46 +100,46 @@ function strPadUnicode($str, $pad_len, $pad_str = ' ', $dir = STR_PAD_RIGHT)
 function dict($name)
 {
     switch ($name) {
-        case 'PERSONAL':
-            return 'Сотрудники';
-        case 'PERS_FIRST_NAME':
-            return 'Имя';
-        case 'PERS_LAST_NAME':
-            return 'Фамилия';
-        case 'PERS_MIDDLE_NAME':
-            return 'Отчество';
-        case 'PERS_JOB':
-            return 'Должность';
-        case 'PERS_LOGIN':
-            return 'Логин';
-        case 'PERS_PASS':
-            return 'Пароль';
-        case 'PERS_TYPE':
-            return 'Тип пользователя';
-        case 'Andry':
-            return 'Андрей';
-        case 'Alex':
-            return 'Алексей';
-        case 'Demin':
-            return 'Демин';
-        case 'Vlasov':
-            return 'Власов';
-        case 'Igor':
-            return 'Игоревич';
-        case 'Anatol':
-            return 'Анатольевич';
-        case 'Direct':
-            return 'Директор';
-        case 'Ilya':
-            return 'Илья';
-        case 'Vladimir':
-            return 'Владимирович';
-        case 'Nikitin':
-            return 'Никитин';
-        case 'stager':
-            return 'Стажер';
-        case 'sotr':
-            return 'Сотрудник';
+//        case 'PERSONAL':
+//            return 'Сотрудники';
+//        case 'PERS_FIRST_NAME':
+//            return 'Имя';
+//        case 'PERS_LAST_NAME':
+//            return 'Фамилия';
+//        case 'PERS_MIDDLE_NAME':
+//            return 'Отчество';
+//        case 'PERS_JOB':
+//            return 'Должность';
+//        case 'PERS_LOGIN':
+//            return 'Логин';
+//        case 'PERS_PASS':
+//            return 'Пароль';
+//        case 'PERS_TYPE':
+//            return 'Тип пользователя';
+//        case 'Andry':
+//            return 'Андрей';
+//        case 'Alex':
+//            return 'Алексей';
+//        case 'Demin':
+//            return 'Демин';
+//        case 'Vlasov':
+//            return 'Власов';
+//        case 'Igor':
+//            return 'Игоревич';
+//        case 'Anatol':
+//            return 'Анатольевич';
+//        case 'Direct':
+//            return 'Директор';
+//        case 'Ilya':
+//            return 'Илья';
+//        case 'Vladimir':
+//            return 'Владимирович';
+//        case 'Nikitin':
+//            return 'Никитин';
+//        case 'stager':
+//            return 'Стажер';
+//        case 'sotr':
+//            return 'Сотрудник';
         default:
             return $name;
     }

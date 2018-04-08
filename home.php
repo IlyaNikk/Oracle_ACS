@@ -16,12 +16,12 @@
         <h1>ИУ4</h1>
     </span>
     <section class="menu">
-        <a href="home.php?table_name=ALGORITHM">Алгоритмы</a>
-        <a href="home.php?table_name=LIBRARIES">Библиотеки</a>
-        <a href="home.php?table_name=TASKS">Задачи</a>
-        <a href="home.php?table_name=STAFF">Сотрудники</a>
-        <a href="home.php?table_name=COMMENTS">Комментарии</a>
-<!--        <a href="home.php?table_name=UTILITY">Изделия</a>-->
+        <a href="home.php?table_name=FACILITY">Отдел</a>
+        <a href="home.php?table_name=OPERATION">Операции</a>
+        <a href="home.php?table_name=PCB">Платы</a>
+        <a href="home.php?table_name=PERSONAL">Сотрудники</a>
+        <a href="home.php?table_name=RADIOELEMENTS">Элементы</a>
+        <a href="home.php?table_name=UTILITY">Изделия</a>
         <a href="auth.html">Выход</a>
     </section>
 </header>

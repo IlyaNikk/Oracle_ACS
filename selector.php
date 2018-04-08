@@ -21,7 +21,8 @@ $readColumnsNames = getReadableColName($con, $tableName);
 $count = 0;
 foreach ($readColumnsNames as $name) {
     if ($count != 0) {
-        echo("<td class='col'>$name</td>");
+        $res = utf8_decode($name);
+        echo("<td class='col'>$res</td>");
     } else {
         echo("<td class='hidden'>");
     }
@@ -57,7 +58,7 @@ while (oci_fetch($s)) {
 echo("</table>");
 
 if ($_COOKIE["persType"] == 'admin') {
-    echo("<form action='update.php?operation=insert' method='post'>");
+    echo("<form action='update.php?operation=insert&table_name=". $tableName ."' method='post'>");
     echo("<div class='form__select-result'>");
     echo("<div class='hidden'><input type='hidden'>" . oci_result($s, $name) . "</input></div>");
     $count = 0;
